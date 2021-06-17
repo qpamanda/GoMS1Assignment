@@ -1,0 +1,20 @@
+{{define "allcourses"}}
+<br>
+<a href="/addcourse">Add Course</a>
+<br><br>
+
+<table id="view">
+    <tr>
+        <th>Course ID</th>
+        <th>Course Title</th>
+        <th></th>
+    </tr>
+    {{range $key, $value := .}}
+    <tr>
+        <td><a href="/updcourse?courseid={{$key}}">{{$key}}</a></td>
+        <td>{{$value.Title}}</td>
+        <td><a href="/delcourse?courseid={{$key}}">Delete</a></td>
+    </tr>
+    {{end}}    
+</table>
+{{end}}
